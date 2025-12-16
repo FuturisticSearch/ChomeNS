@@ -1,0 +1,22 @@
+name: Extract ZIP
+
+on:
+  push:
+    paths:
+      - 'ChomeNSSource.zip'
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create output folder
+        run: mkdir -p extracted
+
+      - name: Extract ZIP file
+        run: unzip -o ChomeNSSource.zip -d extracted
+
+      - name: List extracted files
+        run: ls -R extracted
