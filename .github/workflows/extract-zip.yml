@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # Allows manual trigger
   push:
     paths:
-      - 'ChromensSource.zip'  # Trigger when the ZIP is updated
+      - 'ChromensSource'  # Trigger when the ZIP is updated
 
 jobs:
   unzip_and_push:
@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create extraction folder
-        run: mkdir -p ChromeNSSource
+        run: mkdir -p ChromensSource
 
       - name: Extract ZIP file
-        run: unzip -o ChromeNSSource.zip -d ChromeNSSource
+        run: unzip -o ChromensSource.zip -d ChromensSource
 
       - name: Commit extracted files
         run: |
