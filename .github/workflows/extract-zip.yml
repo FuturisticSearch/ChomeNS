@@ -3,7 +3,7 @@ name: Extract ZIP
 on:
   push:
     paths:
-      - 'ChomeNSSource.zip'
+      - 'ChomensSource.zip'
 
 jobs:
   unzip:
